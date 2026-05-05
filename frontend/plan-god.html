@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-OS | God Mode Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="top-navbar">
+        <div class="nav-brand"><a href="index.html" style="color: inherit; text-decoration: none;">Z-OS <span class="blue-dot">.</span></a></div>
+        <button class="mobile-menu-btn" id="mobile-toggle">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        <ul class="nav-links" id="nav-menu">
+            <li><a href="about.html">About Us & Project</a></li>
+            <li><a href="pricing.html" style="color: var(--primary-blue);">Pricing</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="login.html" class="btn-primary">Login / Profile</a></li>
+        </ul>
+    </nav>
+
+    <main class="core-container">
+        <div class="terminal-box" style="border-color: var(--text-white);">
+            <header class="term-header">
+                <div class="status-wrap">
+                    <div class="pulse-ring" style="border-color: var(--text-white);"><div class="core-dot" style="background: var(--text-white);"></div></div>
+                    <span class="status-text" style="color: var(--text-white);">PLAN DETAILS : GOD_MODE</span>
+                </div>
+            </header>
+
+            <section class="page-content">
+                <h1 class="page-title" style="color: var(--text-white);">God Mode [₹499/mo]</h1>
+                <p class="page-text" style="max-width: 800px; margin-bottom: 20px;">
+                    Absolute, unrestricted control over your digital environment. For power users who require high-frequency task automation and direct system hook access.
+                </p>
+                
+                <div class="about-grid">
+                    <div style="display: flex; flex-direction: column; gap: 20px;">
+                        <div class="os-card" style="border-color: var(--text-white);">
+                            <h3 style="color: var(--text-white);">> What are 150,000 Tokens?</h3>
+                            <p class="page-text">
+                                The equivalent of enterprise-level compute logic allocated to a single user.
+                                <br><br>
+                                <strong>150,000 tokens allows for:</strong><br>
+                                • ~25 to 30 massive, multi-step Reasoning tasks.<br>
+                                • OR virtually unlimited daily web and text execution. Never hit a rate limit again.
+                            </p>
+                        </div>
+                        <div class="os-card">
+                            <h3>> Zero-Latency Priority</h3>
+                            <p class="page-text">
+                                Standard API calls sit in a shared network queue. God Mode users are hard-routed through priority endpoints, ensuring near-instantaneous intent parsing and execution.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 20px;">
+                        <div class="os-card">
+                            <h3>> Unrestricted Shell Access</h3>
+                            <p class="page-text">
+                                Z-OS establishes a direct hook into Windows PowerShell. Command the AI to run system-level queries, execute backend Python scripts, configure network settings, and traverse directories natively.
+                            </p>
+                        </div>
+                        <div class="os-card">
+                            <h3>> Direct Dev Uplink</h3>
+                            <p class="page-text">
+                                Need a custom automation script added to the Z-OS engine? God Mode grants priority support routing directly to the core architect (Soham Dharap).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 30px; display: flex; flex-wrap: wrap; gap: 15px; max-width: 400px;">
+                    <a href="pricing.html" class="btn-primary btn-outline"><- Back to Plans</a>
+                    <button class="btn-primary" onclick="initiatePayment('god')" style="flex: 1; background: var(--text-white); color: var(--bg-black);">Buy God Mode</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- THE STATIC UPI MODAL -->
+    <div class="modal-overlay" id="payment-modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeUPIModal()">X</button>
+            <h2 class="page-title" style="border: none; margin-bottom: 5px; font-size: 20px;">INITIATE PROTOCOL</h2>
+            <p class="page-text" id="modal-plan-desc" style="color: var(--text-white);">Transferring funds for: God Mode [MONTHLY]</p>
+            <div class="qr-container"><img id="qr-image" src="" alt="Loading Secure QR..."></div>
+            <div class="upi-id-display">Receiving Node: <strong>Soham Dharap</strong><br>Payload Amount: <strong>₹499</strong></div>
+            <a href="#" id="mobile-pay-btn" class="btn-primary" style="display: block; width: 100%;">Pay via Mobile App</a>
+            <p class="page-text" style="font-size: 11px; margin-top: 15px;">*Scan via GPay, PhonePe, Paytm or click the button on mobile.<br>Root access manually granted within 2-4 hours of sync.</p>
+        </div>
+    </div>
+
+    <script>
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        mobileToggle.addEventListener('click', () => { navMenu.classList.toggle('show'); });
+
+        const paymentModal = document.getElementById('payment-modal');
+        const qrImage = document.getElementById('qr-image');
+        const mobilePayBtn = document.getElementById('mobile-pay-btn');
+
+        function initiatePayment(tier) {
+            // FIXED PATH: Added ../ to go up one level
+            qrImage.src = `../images/qr_499.png`;
+            mobilePayBtn.href = `upi://pay?pa=dzynsbysoham@upi&pn=Soham%20Dharap`;
+            paymentModal.classList.add('active');
+        }
+        function closeUPIModal() { paymentModal.classList.remove('active'); }
+    </script>
+</body>
+</html>

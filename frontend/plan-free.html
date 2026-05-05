@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-OS | Initiate Protocol Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="top-navbar">
+        <div class="nav-brand"><a href="index.html" style="color: inherit; text-decoration: none;">Z-OS <span class="blue-dot">.</span></a></div>
+        <button class="mobile-menu-btn" id="mobile-toggle">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        <ul class="nav-links" id="nav-menu">
+            <li><a href="about.html">About Us & Project</a></li>
+            <li><a href="pricing.html" style="color: var(--primary-blue);">Pricing</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="login.html" class="btn-primary">Login / Profile</a></li>
+        </ul>
+    </nav>
+
+    <main class="core-container">
+        <div class="terminal-box">
+            <header class="term-header">
+                <div class="status-wrap">
+                    <div class="pulse-ring" style="border-color: var(--text-grey);"><div class="core-dot" style="background: var(--text-grey);"></div></div>
+                    <span class="status-text">PLAN DETAILS : INITIATE_PROTOCOL</span>
+                </div>
+            </header>
+
+            <section class="page-content">
+                <h1 class="page-title">Initiate Protocol [FREE]</h1>
+                <p class="page-text" style="max-width: 800px; margin-bottom: 20px;">
+                    This is the entry-level sandbox mode. It is designed to let you test the Z-OS ecosystem before committing to API usage costs. 
+                </p>
+                
+                <div class="about-grid">
+                    <div style="display: flex; flex-direction: column; gap: 20px;">
+                        <div class="os-card">
+                            <h3>> What are 6,500 Tokens?</h3>
+                            <p class="page-text">
+                                In AI terms, a "Token" is a piece of data processed by the LLM. Every command you type costs tokens.
+                                <br><br>
+                                <strong>6,500 tokens allows for:</strong><br>
+                                • ~1 highly complex "Reasoning" command.<br>
+                                • OR ~3 simple, direct text executions per day.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 20px;">
+                        <div class="os-card">
+                            <h3>> Local Browser Automation</h3>
+                            <p class="page-text">
+                                The free tier allows Z-OS to securely open new tabs in your local Chrome or Edge browser, type URLs, and execute Google searches without you touching the keyboard.
+                            </p>
+                        </div>
+                        <div class="os-card">
+                            <h3>> Standard Text Execution</h3>
+                            <p class="page-text">
+                                Command Z-OS to inject raw text payloads directly into your currently active window automatically.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 30px; display: flex; flex-wrap: wrap; gap: 15px;">
+                    <a href="pricing.html" class="btn-primary btn-outline"><- Back to Plans</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        // MOBILE NAV ENGINE
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        mobileToggle.addEventListener('click', () => { navMenu.classList.toggle('show'); });
+    </script>
+</body>
+</html>

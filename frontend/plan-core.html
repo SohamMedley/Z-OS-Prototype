@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-OS | Core Access Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="top-navbar">
+        <div class="nav-brand"><a href="index.html" style="color: inherit; text-decoration: none;">Z-OS <span class="blue-dot">.</span></a></div>
+        <button class="mobile-menu-btn" id="mobile-toggle">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        <ul class="nav-links" id="nav-menu">
+            <li><a href="about.html">About Us & Project</a></li>
+            <li><a href="pricing.html" style="color: var(--primary-blue);">Pricing</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="login.html" class="btn-primary">Login / Profile</a></li>
+        </ul>
+    </nav>
+
+    <main class="core-container">
+        <div class="terminal-box">
+            <header class="term-header">
+                <div class="status-wrap">
+                    <div class="pulse-ring"><div class="core-dot"></div></div>
+                    <span class="status-text">PLAN DETAILS : CORE_ACCESS</span>
+                </div>
+            </header>
+
+            <section class="page-content">
+                <h1 class="page-title">Core Access [₹99/mo]</h1>
+                <p class="page-text" style="max-width: 800px; margin-bottom: 20px;">
+                    The recommended operating tier. Unlocks deep system integration, allowing the AI to think and interact with your physical desktop apps, not just your browser.
+                </p>
+                
+                <div class="about-grid">
+                    <div style="display: flex; flex-direction: column; gap: 20px;">
+                        <div class="os-card" style="border-color: var(--primary-blue);">
+                            <h3 style="color: var(--primary-blue);">> What are 30,000 Tokens?</h3>
+                            <p class="page-text">
+                                A massive upgrade in daily compute logic. 
+                                <br><br>
+                                <strong>30,000 tokens allows for:</strong><br>
+                                • ~5 heavy, multi-step desktop hijack tasks.<br>
+                                • OR ~15 to 20 standard web and text automations every single day.
+                            </p>
+                        </div>
+                        <div class="os-card">
+                            <h3>> LPU Reasoning Engine</h3>
+                            <p class="page-text">
+                                Standard AI blindly executes tasks. Core Access routes your payload through Groq's LPUs, forcing the AI to "think step-by-step" and analyze your screen state before executing, preventing errors.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 20px;">
+                        <div class="os-card">
+                            <h3>> Full Desktop App Hijacking</h3>
+                            <p class="page-text">
+                                Break out of the browser. Command Z-OS to natively open local `.exe` files (like Notepad, Spotify, or VS Code), minimize all windows, press hardware keys, and even forcefully terminate specific applications at the OS level.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 30px; display: flex; flex-wrap: wrap; gap: 15px; max-width: 400px;">
+                    <a href="pricing.html" class="btn-primary btn-outline"><- Back to Plans</a>
+                    <button class="btn-primary" onclick="initiatePayment('core')" style="flex: 1;">Buy Core Access</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- THE STATIC UPI MODAL -->
+    <div class="modal-overlay" id="payment-modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeUPIModal()">X</button>
+            <h2 class="page-title" style="border: none; margin-bottom: 5px; font-size: 20px;">INITIATE PROTOCOL</h2>
+            <p class="page-text" id="modal-plan-desc" style="color: var(--text-white);">Transferring funds for: Core Access [MONTHLY]</p>
+            <div class="qr-container"><img id="qr-image" src="" alt="Loading Secure QR..."></div>
+            <div class="upi-id-display">Receiving Node: <strong>Soham Dharap</strong><br>Payload Amount: <strong>₹99</strong></div>
+            <a href="#" id="mobile-pay-btn" class="btn-primary" style="display: block; width: 100%;">Pay via Mobile App</a>
+            <p class="page-text" style="font-size: 11px; margin-top: 15px;">*Scan via GPay, PhonePe, Paytm or click the button on mobile.<br>Root access manually granted within 2-4 hours of sync.</p>
+        </div>
+    </div>
+
+    <script>
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        mobileToggle.addEventListener('click', () => { navMenu.classList.toggle('show'); });
+
+        const paymentModal = document.getElementById('payment-modal');
+        const qrImage = document.getElementById('qr-image');
+        const mobilePayBtn = document.getElementById('mobile-pay-btn');
+
+        function initiatePayment(tier) {
+            // FIXED PATH: Added ../ to go up one level
+            qrImage.src = `../images/qr_99.png`;
+            mobilePayBtn.href = `upi://pay?pa=dzynsbysoham@upi&pn=Soham%20Dharap`;
+            paymentModal.classList.add('active');
+        }
+        function closeUPIModal() { paymentModal.classList.remove('active'); }
+    </script>
+</body>
+</html>

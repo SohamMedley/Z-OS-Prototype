@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-OS | Aggressive Core</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="top-navbar">
+        <div class="nav-brand"><a href="index.html" style="color: inherit; text-decoration: none;">Z-OS <span class="blue-dot">.</span></a></div>
+        
+        <button class="mobile-menu-btn" id="mobile-toggle">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+
+        <ul class="nav-links" id="nav-menu">
+            <li><a href="about.html">About Us & Project</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="login.html" class="btn-primary">Login / Profile</a></li>
+        </ul>
+    </nav>
+
+    <main class="core-container">
+        <div class="terminal-box">
+            
+            <header class="term-header">
+                <div class="status-wrap">
+                    <div class="pulse-ring"><div class="core-dot"></div></div>
+                    <span class="status-text">SYSTEM SECURED</span>
+                </div>
+                <div class="time-display" id="clock">00:00:00</div>
+            </header>
+
+            <section class="logs-area" id="logs-panel">
+                <div class="log-row system">
+                    <div class="log-avatar">[SYS]</div>
+                    <div class="log-msg">Aggressive routing protocol initialized. Ready for command.</div>
+                </div>
+            </section>
+
+            <footer class="term-footer">
+                <div class="chips-container">
+                    <button class="action-chip" data-cmd="Open Notepad, type Welcome Sir, Z-OS at your service!, wait 7 seconds, then force close notepad.exe">GREET</button>
+                    <button class="action-chip" data-cmd="Minimize all windows and show desktop">DESKTOP MODE</button>
+                    <button class="action-chip" data-cmd="Search the web for the latest global tech news">NEWS</button>
+                </div>
+
+                <div class="input-bar" id="input-container">
+                    <button class="icon-btn mic" id="mic-btn">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="22"></line></svg>
+                    </button>
+                    
+                    <input type="text" id="command-input" placeholder="AWAITING DIRECTIVE... (Or press Win + H)" autocomplete="off">
+                    
+                    <button class="icon-btn send" id="send-btn">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    </button>
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
